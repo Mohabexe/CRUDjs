@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUDS</title>
+  </head>
+  <body>
+    <div class="crud">
+      <div class="head">
+        <h1>CRUDS</h1>
+        <p>Product Management System</p>
+      </div>
+      <div class="inputs">
+        <input type="text" name="name" id="name" placeholder="Product Name" />
+        <div class="price">
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Product Price"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            name="taxes"
+            id="taxes"
+            placeholder="Taxes"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            name="ads"
+            id="ads"
+            placeholder="Ads"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            name="discount"
+            id="discount"
+            placeholder="Discount"
+          />
+          <div class="total">Total: <label id="total" for="Total"></label></div>
+        </div>
+        <input
+          type="number"
+          name="quantity"
+          id="quantity"
+          placeholder="Product Quantity"
+        />
+        <input
+          type="text"
+          name="category"
+          id="category"
+          placeholder="Category"
+        />
+        <button id="submit" type="submit">Add</button>
+      </div>
+
+      <div class="outputs">
+        <div class="searchBlock">
+          <input
+            onkeyup="searchData(this.value)"
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search"
+          />
+          <div class="btnSearch">
+            <button onclick="getSearchMode(this.id)" id="searchTitle">
+              Search by Title
+            </button>
+            <button onclick="getSearchMode(this.id)" id="searchCategory">
+              Search by Category
+            </button>
+          </div>
+        </div>
+        <div id="converts" class="convert"></div>
+        <div id="deleteAll"></div>
+        <table>
+          <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Taxes</th>
+            <th>Product Ads</th>
+            <th>Product Discount</th>
+            <th>Category</th>
+            <th>Total</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/json2csv"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
